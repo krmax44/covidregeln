@@ -1,0 +1,20 @@
+{
+  "name": "covidregeln",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "krmax44 <hi@krmax44.de>",
+  "license": "MIT",
+  "dependencies": {
+    "mastodon": "^1.2.2",
+    "twitter": "^1.7.1",
+    "twitter-lite": "^1.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "trailingComma": "none",
+    "singleQuote": true
+  }
+}

@@ -1,0 +1,42 @@
+[
+  [
+    "die 7-Tage-Insidenz",
+    "10-300",
+    ""
+  ],
+  [
+    "der R-Wert",
+    "0.5-1.5",
+    ""
+  ],
+  [
+    "die Raumlufttemperatur",
+    "10-45",
+    " °C"
+  ],
+  [
+    "die Anzahl der Pop-Up-Radwege",
+    "10-10000",
+    ""
+  ],
+  [
+    "die Summe an Lobbygeldern",
+    "1-100",
+    " Mio. Euro"
+  ],
+  [
+    "die Menge an verabreichtem Impfstoff",
+    "1-1000",
+    " ml"
+  ],
+  [
+    "die kumulierte Masse aller Aluhüte",
+    "1-1000",
+    " kg"
+  ],
+  [
+    "die Anzahl der Aerosole",
+    "1-1000",
+    ""
+  ]
+]
