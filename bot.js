@@ -5,6 +5,8 @@ const messwerte = require('./data/messwerte.json');
 const gruppen = require('./data/gruppen.json');
 const taetigkeiten = require('./data/taetigkeiten.json');
 const orte = require('./data/orte.json');
+const tage = require('./data/tage.json');
+const buchstaben = require('./data/buchstaben.json');
 
 const randomFromArray = a => a[Math.floor(Math.random() * a.length)];
 
@@ -28,7 +30,9 @@ const status = randomFromArray(templates)
   .replace('$zahl', randomInRange(range) + unit)
   .replace('$gruppe', randomFromArray(gruppen))
   .replace('$ort', randomFromArray(orte))
-  .replace('$taetigkeit', randomFromArray(taetigkeiten));
+  .replace('$taetigkeit', randomFromArray(taetigkeiten))
+  .replace('$tag', randomFromArray(tage))
+  .replace('$buchstabe', randomFromArray(buchstaben));
 
 const client = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER,
@@ -37,6 +41,12 @@ const client = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-client.post('statuses/update', { status }).catch(e => {
-  throw e;
-});
+client
+  .post('statuses/update', { status })
+  .then(() => {
+    console.log('tweeted successfully:');
+    console.log(status);
+  })
+  .catch(e => {
+    throw e;
+  });

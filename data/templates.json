@@ -1,4 +1,7 @@
 [
   "Neue Corona-Regel für $land: sofern $messwert über $zahl liegt, dürfen $gruppe in $ort nicht mehr $taetigkeit.",
-  "Neue Corona-Regel für $land: sofern $messwert unter $zahl liegt, müssen $gruppe in $ort zwingend $taetigkeit."
+  "Neue Corona-Regel für $land: sofern $messwert unter $zahl liegt, müssen $gruppe in $ort zwingend $taetigkeit.",
+  "Gilt absofort nicht mehr in $land: ist $messwert unter $zahl, dürfen $gruppe in $ort wieder $taetigkeit.",
+  "Von nun an gilt jeden zweiten $tag: sofern $messwert über $zahl liegt, dürfen $gruppe in $ort nicht mehr $taetigkeit.",
+  "An Monaten, die kein $buchstabe enthalten gilt: ist $messwert unter $zahl, gelten für $gruppe in $land keine Auflagen."
 ]
