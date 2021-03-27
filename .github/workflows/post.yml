@@ -1,0 +1,27 @@
+name: post
+
+on:
+  schedule:
+    - cron: '*/30 11,19 * * *'
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '15.x'
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
+      - name: Post
+        run: yarn post
+        env:
+          TWITTER_CONSUMER: ${{ secrets.TWITTER_CONSUMER }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
