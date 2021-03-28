@@ -1,4 +1,5 @@
 const Twitter = require('twitter-lite');
+const Mastodon = require('mastodon');
 const templates = require('./data/templates.json');
 const laender = require('./data/laender.json');
 const messwerte = require('./data/messwerte.json');
@@ -34,19 +35,24 @@ const status = randomFromArray(templates)
   .replace('$tag', randomFromArray(tage))
   .replace('$buchstabe', randomFromArray(buchstaben));
 
-const client = new Twitter({
+console.log('generated status:', status);
+
+const twitter = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER,
   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
   access_token_key: process.env.TWITTER_ACCESS_TOKEN,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-client
+twitter
   .post('statuses/update', { status })
-  .then(() => {
-    console.log('tweeted successfully:');
-    console.log(status);
-  })
-  .catch(e => {
-    throw e;
-  });
+  .then(() => console.log('tweeted successfully'))
+
+const mastodon = new Mastodon({
+  access_token: process.env.MASTODON_ACCESS_TOKEN,
+  api_url: process.env.MASTODON_API_URL
+});
+
+mastodon
+  .post('statuses', { status })
+  .then(() => console.log('tooted successfully'))
