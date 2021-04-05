@@ -38,5 +38,25 @@
     "die Anzahl der Aerosole",
     "1-1000",
     ""
+  ],
+  [
+    "die Frauenquote der MPK",
+    "0-100",
+    " %"
+  ],
+  [
+    "die Gereiztheit aller Virolog:innen",
+    "0-100",
+    ""
+  ],
+  [
+    "die Zahl der Handschläge von Polizisten mit Querdenkern",
+    "20-50",
+    ""
+  ],
+  [
+    "der Höchstwert an Menschen auf einer Coronademo",
+    "1000-10000",
+    " Vollidioten"
   ]
 ]
