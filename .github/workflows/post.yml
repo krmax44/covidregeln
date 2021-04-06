@@ -2,7 +2,7 @@ name: post
 
 on:
   schedule:
-    - cron: '*/30 9,17 * * *'
+    - cron: '30 7,10,13,17 * * *'
   workflow_dispatch:
 
 jobs:
